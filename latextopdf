@@ -1,0 +1,3 @@
+#/bin/bash
+
+pandoc -s --from latex $1 --to pdf -o out.pdf && echo "Done converting $1 to pdf"

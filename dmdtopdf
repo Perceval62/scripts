@@ -2,4 +2,4 @@
 # Passes content of Current Workdir to try and generate pdf
 # Requires Groff, dmenu and Awk to be installed on system
 inputFile=$(ls | dmenu)
-awk -f "$HOME/scripts/toTroffMom.awk" $inputFile | pdfmom > out.pdf
+pandoc $inputFile -o out.pdf && echo ">>> Done converting $inputFile to pdf"
