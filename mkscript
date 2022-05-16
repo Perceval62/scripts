@@ -1,2 +1,9 @@
 #!/bin/bash
+
+if [ $# -eq 0 ]; then
+	echo "No arguments provided";
+	echo "Usage is: > mkscript [name of script]"
+	exit 1
+fi 
+
 touch $1 && chmod a+x $1 && echo "#!/bin/bash" > $1 && echo 'echo "Hello, world"' >> $1
